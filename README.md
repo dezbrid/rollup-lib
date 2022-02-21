@@ -12,7 +12,7 @@ question version (1.0.0):
 question description: example the how create  rollup lib
 question entry point (index.js):
 question repository url:
-question author: Dez
+question author: dezbrid
 question license (MIT):
 question private:
 success Saved package.json
@@ -51,7 +51,7 @@ import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss"; //css
 import { terser } from "rollup-plugin-terser"; //minify our bundle and reduce the overall file size.
-import peerDepsExternal from "rollup-plugin-peer-deps-external";//resollve peer deps external
+import peerDepsExternal from "rollup-plugin-peer-deps-external"; //resollve peer deps external
 
 const packageJson = require("./package.json");
 
@@ -71,12 +71,12 @@ export default [
       },
     ],
     plugins: [
-      peerDepsExternal(),//optimization
+      peerDepsExternal(), //optimization
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss(), //css
-      terser(),//optimization
+      terser(), //optimization
     ],
   },
   {
@@ -86,4 +86,46 @@ export default [
     external: [/\.css$/], //css
   },
 ];
+```
+
+## Build
+
+1. in package.json
+
+```json
+ "scripts": {
+    "rollup": "rollup -c"
+  },
+```
+
+2. run
+
+```bash
+yarn run rollup
+```
+
+# publish
+
+1. Your are need to generate a [personal access token](https://github.com/settings/tokens/new) on Github in your account with ` write:packages and read:packages` permissions. Make sure to copy your new personal access token now. You won’t be able to see it again! For more information, you can check [Github documentation](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
+
+2. in your .npmrc file in your root pc in mac or linux (`/Users/<user-name>/.npmrc`) or windows (`C:\Users\{YOUR_WINDOWS_USERNAME}`). You can use `npm config ls -l` for show all the implicit settings for npm
+
+```txt
+registry=https://registry.npmjs.org/
+@YOUR_GITHUB_USERNAME:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=YOUR_AUTH_TOKEN
+```
+
+3.  in packge.json
+
+```json
+"publishConfig": {
+    "registry": "https://npm.pkg.github.com/YOUR_GITHUB_USERNAME"
+  },
+```
+
+4. run
+
+```bash
+npm publish
 ```

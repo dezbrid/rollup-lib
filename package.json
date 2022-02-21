@@ -1,5 +1,5 @@
 {
-  "name": "rollup-lib",
+  "name": "@dezbrid/rollup-lib",
   "version": "1.0.0",
   "description": "example the how create rollup lib",
   "scripts": {
@@ -32,5 +32,8 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/dezbrid/rollup-lib.git"
+  "repository": "https://github.com/dezbrid/rollup-lib.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@dezbrid"
+  }
 }
