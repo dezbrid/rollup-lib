@@ -1,0 +1,16 @@
+{
+  "name": "rollup-lib",
+  "version": "1.0.0",
+  "description": "example the how create rollup lib",
+  "main": "index.js",
+  "repository": "https://github.com/dezbrid/rollup-lib.git",
+  "author": "dezbrid <dezbrid@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.5.5"
+  }
+}
