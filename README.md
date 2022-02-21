@@ -17,6 +17,7 @@ question license (MIT):
 question private:
 success Saved package.json
 ```
+
 3. install dependencies
 
 ```bash
@@ -24,20 +25,25 @@ yarn add -D react react-dom typescript @types/react @types/react-dom
 ```
 
 4. initialize typescript
+
 ```bash
 yarn tsc --init
-````
+```
 
 5. install rollup dependecies
+
 ```bash
-yarn add -D rollup @rollup/plugin-node-resolve @rollup/plugin-typescript @rollup/plugin-commonjs rollup-plugin-dts tslib
+yarn add -D rollup @rollup/plugin-node-resolve @rollup/plugin-typescript @rollup/plugin-commonjs rollup-plugin-dts tslib rollup-plugin-postcss postcss
 ```
+
 6. create a rollup.config.js
+
 ```tsx
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
+import postcss from "rollup-plugin-postcss";
 
 const packageJson = require("./package.json");
 
@@ -60,13 +66,14 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
+      postcss(),
     ],
   },
   {
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
+    external: [/\.css$/],
   },
 ];
-
 ```
