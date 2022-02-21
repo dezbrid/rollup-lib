@@ -51,7 +51,7 @@ import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss"; //css
 import { terser } from "rollup-plugin-terser"; //minify our bundle and reduce the overall file size.
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";//resollve peer deps external
 
 const packageJson = require("./package.json");
 
@@ -71,12 +71,12 @@ export default [
       },
     ],
     plugins: [
-      peerDepsExternal(),
+      peerDepsExternal(),//optimization
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss(), //css
-      terser(),
+      terser(),//optimization
     ],
   },
   {
