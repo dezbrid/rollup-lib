@@ -8,12 +8,8 @@
 # testing
 /coverage
 
-#build
-/dist
-/example/node_modules
 # production
 /build
-.npmrc
 
 # misc
 .DS_Store
