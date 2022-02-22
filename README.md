@@ -43,9 +43,11 @@ npm install --global rollup
    rollup-plugin-postcss postcss
    optimization:
    rollup-plugin-peer-deps-external rollup-plugin-terser
+   imagen:
+   @rollup/plugin-image
 
 ```bash
-yarn add -D rollup @rollup/plugin-node-resolve @rollup/plugin-typescript @rollup/plugin-commonjs rollup-plugin-dts tslib rollup-plugin-postcss postcss rollup-plugin-peer-deps-external rollup-plugin-terser
+yarn add -D rollup @rollup/plugin-node-resolve @rollup/plugin-typescript @rollup/plugin-commonjs rollup-plugin-dts tslib rollup-plugin-postcss postcss rollup-plugin-peer-deps-external rollup-plugin-terser @rollup/plugin-image
 ```
 
 7. create a rollup.config.js
@@ -58,6 +60,7 @@ import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss"; //css
 import { terser } from "rollup-plugin-terser"; //minify our bundle and reduce the overall file size.
 import peerDepsExternal from "rollup-plugin-peer-deps-external"; //resollve peer deps external
+import image from '@rollup/plugin-image';
 
 const packageJson = require("./package.json");
 
@@ -82,6 +85,7 @@ export default [
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss(), //css
+      image(),
       terser(), //optimization
     ],
   },

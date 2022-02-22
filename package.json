@@ -1,6 +1,6 @@
 {
   "name": "@dezbrid/rollup-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "example the how create rollup lib",
   "scripts": {
     "rollup": "rollup -c",
@@ -16,6 +16,7 @@
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-image": "^2.1.1",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.0",
     "@storybook/addon-actions": "^6.4.19",
