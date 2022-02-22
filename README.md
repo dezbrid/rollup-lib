@@ -1,4 +1,4 @@
-# Make a Librery REact with Rollup
+# Make a Librery React with Rollup
 
 # create
 
@@ -30,7 +30,13 @@ yarn add -D react react-dom typescript @types/react @types/react-dom
 yarn tsc --init
 ```
 
-5. install rollup dependecies
+5. global dep
+
+```bash
+npm install --global rollup
+```
+
+6. install rollup dependecies
    basic dep:
    rollup @rollup/plugin-node-resolve @rollup/plugin-typescript @rollup/plugin-commonjs rollup-plugin-dts tslib
    css:
@@ -42,7 +48,7 @@ yarn tsc --init
 yarn add -D rollup @rollup/plugin-node-resolve @rollup/plugin-typescript @rollup/plugin-commonjs rollup-plugin-dts tslib rollup-plugin-postcss postcss rollup-plugin-peer-deps-external rollup-plugin-terser
 ```
 
-6. create a rollup.config.js
+7. create a rollup.config.js
 
 ```tsx
 import resolve from "@rollup/plugin-node-resolve";
@@ -104,7 +110,7 @@ export default [
 yarn run rollup
 ```
 
-# publish
+# Publish
 
 1. Your are need to generate a [personal access token](https://github.com/settings/tokens/new) on Github in your account with ` write:packages and read:packages` permissions. Make sure to copy your new personal access token now. You won’t be able to see it again! For more information, you can check [Github documentation](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
 
@@ -130,7 +136,7 @@ registry=https://registry.npmjs.org/
 npm publish
 ```
 
-# Adding testing
+# Add testing jest
 
 1. install test jest and babel deps
 
@@ -169,4 +175,20 @@ module.exports = {
     "test": "jest"
   }
 }
+```
+
+# Add StoryBook
+
+1. install deps
+
+```bash
+npx sb init
+```
+
+2. use node version 16.x.x
+
+3. use with comand
+
+```bash
+yarn storybook
 ```
