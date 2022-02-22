@@ -1,2 +1,2 @@
 import SayHello from "./components/SayHello";
-export default SayHello;
+export { SayHello };

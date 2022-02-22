@@ -192,3 +192,8 @@ npx sb init
 ```bash
 yarn storybook
 ```
+
+4. in tsconfig.json add
+   ´´´json
+   "exclude": ["**/*.stories.tsx"]
+   ´´´

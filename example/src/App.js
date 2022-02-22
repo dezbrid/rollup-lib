@@ -1,11 +1,11 @@
 import React from "react";
-import SimpleLib from "rollup-lib";
+import {SayHello} from "rollup-lib";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-     <SimpleLib name="daniel"/>
+     <SayHello name="daniel"/>
     </div>
   );
 }
