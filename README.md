@@ -130,9 +130,9 @@ registry=https://registry.npmjs.org/
 npm publish
 ```
 
-# Adding Tools
+# Adding testing
 
-1. install test an babel deps
+1. install test jest and babel deps
 
 ```bash
 yarn add -D @testing-library/react jest @types/jest @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript babel-jest identity-obj-proxy
