@@ -129,3 +129,44 @@ registry=https://registry.npmjs.org/
 ```bash
 npm publish
 ```
+
+# Adding Tools
+
+1. install test an babel deps
+
+```bash
+yarn add -D @testing-library/react jest @types/jest @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript babel-jest identity-obj-proxy
+```
+
+2. create `jest.config.js` in root of project
+
+```tsx
+module.exports = {
+  testEnvironment: "jsdom",
+  moduleNameMapper: {
+    ".(css|less|scss)$": "identity-obj-proxy",
+  },
+};
+```
+
+3. create `babel.config.js` in root of project
+
+```tsx
+module.exports = {
+  presets: [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-typescript",
+  ],
+};
+```
+
+4. in package.json add
+
+```json
+{
+  "scripts": {
+    "test": "jest"
+  }
+}
+```
